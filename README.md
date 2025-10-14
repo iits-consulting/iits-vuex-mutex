@@ -5,13 +5,13 @@ Supports Vuex 3 (Vue 2) and Vuex 4 (Vue 3). Ships with ESM + CJS + TypeScript ty
 
 ## Installation
 ```bash
-npm i @iits/vuex-mutex
+npm i @iits-consulting/vuex-mutex
 # vuex must already be installed in your app
 ```
 
 ## Usage
 ```ts
-import { createVuexMutexPlugin } from '@iits/vuex-mutex'
+import { createVuexMutexPlugin } from '@iits-consulting/vuex-mutex'
 
 const store = new Vuex.Store({
   plugins: [

@@ -9,7 +9,11 @@
     "skipLibCheck": true,
     "outDir": "dist",
     "rootDir": "src",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "vuex": ["node_modules/vuex/types/index.d.ts"]
+    }
   },
   "include": ["src"]
 }

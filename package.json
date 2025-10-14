@@ -1,6 +1,6 @@
 {
   "name": "@iits-consulting/vuex-mutex",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vuex plugin to serialize actions per namespace and deduplicate duplicate dispatches (mutex + dedupe).",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -21,8 +21,8 @@
   "sideEffects": false,
   "scripts": {
     "build": "tsup src/index.ts --dts --format esm,cjs --clean",
-	"test": "vitest run --passWithNoTests",
-	"prepublishOnly": "npm run build && npm test"
+    "test": "vitest run --passWithNoTests",
+    "prepublishOnly": "npm run build && npm test"
   },
   "engines": {
     "node": ">=18"

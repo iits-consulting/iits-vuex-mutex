@@ -4,14 +4,12 @@
 [![npm downloads](https://img.shields.io/npm/dm/@iits-consulting/vuex-mutex.svg)](https://www.npmjs.com/package/@iits-consulting/vuex-mutex)
 ![types](https://img.shields.io/badge/types-TypeScript-blue)
 [![license](https://img.shields.io/npm/l/@iits-consulting/vuex-mutex.svg)](#license)
-[![bundle size](https://img.shields.io/bundlephobia/minzip/@iits-consulting/vuex-mutex)](https://bundlephobia.com/package/@iits-consulting/vuex-mutex)
-
-**Vuex plugin** for serializing actions **per namespace** and **deduplicating** concurrent or repeated dispatches  
-(in-flight & quick-repeat). Compatible with **Vuex 3 & 4** · ESM/CJS · Type definitions included.
 
 <p align="center">
   <strong>Simple Vuex plugin for serializing and deduplicating async actions</strong><br>
   Prevents duplicate API calls · Clean logs · Zero configuration overhead
+  <br><br>
+  <img src="https://raw.githubusercontent.com/iits-consulting/iits-vuex-mutex/main/docs/banner.png" width="600" alt="Vuex Mutex Banner">
 </p>
 
 ---

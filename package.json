@@ -1,6 +1,6 @@
 {
   "name": "@iits-consulting/vuex-mutex",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Vuex plugin to serialize actions per namespace and deduplicate duplicate dispatches (mutex + dedupe).",
   "type": "module",
   "main": "./dist/index.cjs",

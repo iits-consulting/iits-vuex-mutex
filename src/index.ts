@@ -6,9 +6,6 @@
  * Ensures that Vuex actions within the same module (namespace) run sequentially
  * (no parallel execution within a module) and deduplicates duplicate dispatches
  * (in-flight + quick-repeat).
- *
- * @version 1.0.0
- * @date 2025-09-03
  */
 
 import type {DispatchOptions, Plugin, Store} from 'vuex'
@@ -448,7 +445,8 @@ function cancelHealthReport() {
  *  * - In the dedicated plugin tests we stub `VITEST=''` to force the plugin on.
  */
 export function createVuexMutexPlugin(mutexPluginOptions: MutexPluginOptions = {}): Plugin<any> {
-  if (process?.env?.VITEST) {
+  const IS_VITEST = typeof process !== 'undefined' && !!process.env?.VITEST
+  if (IS_VITEST) {
     return () => {}
   }
 

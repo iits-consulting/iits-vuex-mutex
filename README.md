@@ -21,9 +21,11 @@ npm i @iits-consulting/vuex-mutex
 ```
 
 ## Quick Example
+```ts
 // Deduplicate in-flight actions across Vuex namespaces
 store.dispatch('user/fetchProfile')
 store.dispatch('user/fetchProfile') // ← second call is dropped
+```
 
 ## Usage
 ```ts
@@ -62,6 +64,9 @@ const store = new Vuex.Store({
 ### Notes
 - Reentrant dispatches in the same namespace are recognized → no deadlock.
 - Internal state is module-wide (fine for SPAs). For strict SSR isolation, move state into the factory.
+
+## Changelog
+See [Releases](https://github.com/iits-consulting/iits-vuex-mutex/releases) for history and changes.
 
 ## License
 MIT

@@ -1,13 +1,31 @@
-# @iits/vuex-mutex
+# @iits-consulting/vuex-mutex
 
-Vuex plugin to serialize actions per namespace and deduplicate duplicate dispatches (mutex + dedupe).  
-Supports Vuex 3 (Vue 2) and Vuex 4 (Vue 3). Ships with ESM + CJS + TypeScript types.
+[![npm version](https://img.shields.io/npm/v/@iits-consulting/vuex-mutex.svg)](https://www.npmjs.com/package/@iits-consulting/vuex-mutex)
+[![npm downloads](https://img.shields.io/npm/dm/@iits-consulting/vuex-mutex.svg)](https://www.npmjs.com/package/@iits-consulting/vuex-mutex)
+![types](https://img.shields.io/badge/types-TypeScript-blue)
+[![license](https://img.shields.io/npm/l/@iits-consulting/vuex-mutex.svg)](#license)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/@iits-consulting/vuex-mutex)](https://bundlephobia.com/package/@iits-consulting/vuex-mutex)
+
+**Vuex plugin** for serializing actions **per namespace** and **deduplicating** concurrent or repeated dispatches  
+(in-flight & quick-repeat). Compatible with **Vuex 3 & 4** · ESM/CJS · Type definitions included.
+
+<p align="center">
+  <strong>Simple Vuex plugin for serializing and deduplicating async actions</strong><br>
+  Prevents duplicate API calls · Clean logs · Zero configuration overhead
+</p>
+
+---
 
 ## Installation
 ```bash
 npm i @iits-consulting/vuex-mutex
 # vuex must already be installed in your app
 ```
+
+## Quick Example
+// Deduplicate in-flight actions across Vuex namespaces
+store.dispatch('user/fetchProfile')
+store.dispatch('user/fetchProfile') // ← second call is dropped
 
 ## Usage
 ```ts
@@ -35,9 +53,21 @@ const store = new Vuex.Store({
 | **debug** | Enable verbose console logs |
 | **isProduction** | Mutes dedupe logs when true |
 
+## Compatibility
+| Dependency | Supported Versions |
+|-------------|--------------------|
+| Vuex | ^3.6.2 \| ^4.0.2 |
+| Node | ≥ 18 |
+| TypeScript | ≥ 5.0 |
+| Module format | ESM + CJS |
+
 ### Notes
 - Reentrant dispatches in the same namespace are recognized → no deadlock.
 - Internal state is module-wide (fine for SPAs). For strict SSR isolation, move state into the factory.
 
 ## License
 MIT
+
+---
+Maintained by [IITS Consulting](https://www.iits-consulting.de) · © 2025 · [MIT License](./LICENSE)
+

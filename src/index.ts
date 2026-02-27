@@ -628,7 +628,7 @@ export function createVuexMutexPlugin(mutexPluginOptions: MutexPluginOptions = {
           if (inFlightByKey.get(deduplicationKey) === process) {
             inFlightByKey.delete(deduplicationKey)
           }
-        })
+        }).catch(() => {}) /* see https://stackoverflow.com/questions/66613162/js-uncaught-error-when-promise-finally-is-used-in-function */
 
         return process
       }
@@ -690,7 +690,7 @@ export function createVuexMutexPlugin(mutexPluginOptions: MutexPluginOptions = {
         if (inFlightByKey.get(deduplicationKey) === process) {
           inFlightByKey.delete(deduplicationKey)
         }
-      })
+      }).catch(() => {})/* see https://stackoverflow.com/questions/66613162/js-uncaught-error-when-promise-finally-is-used-in-function */
 
       return process
       //#endregion

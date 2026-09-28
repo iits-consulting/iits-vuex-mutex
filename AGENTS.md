@@ -31,3 +31,17 @@
 
 - Output directory: `dist/`
 - Generates ESM (`dist/index.js`), CJS (`dist/index.cjs`) and TypeScript definitions (`dist/index.d.ts`)
+
+## Git workflow
+
+- Never work directly on main.
+- Create a dedicated branch for every task.
+- Run the relevant tests and build before committing.
+- Review git diff before committing.
+- Commit only changes related to the current task.
+- Push only the current task branch.
+- Never force-push.
+- Never push directly to main.
+- Changes to main must go through a pull request.
+- The required "build-and-test" check must pass before merge.
+- Never merge into main without explicit user approval.
